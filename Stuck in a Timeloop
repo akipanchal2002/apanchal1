@@ -1,0 +1,39 @@
+using System;
+
+namespace TimeloopConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            try
+            {
+        
+                int X = int.Parse(Console.ReadLine());
+                int count = 1;
+                if (X >=1 && X <= 100)
+                {
+                    while(count <= X)
+                    {
+                        Console.Write(count + " " + "Abracadabra");
+                        Console.WriteLine();
+                        count = count + 1;
+                    }
+                      
+                }
+                else
+                {
+                    Console.Write("Only enter integers from 1-100");
+                }
+            }
+            catch
+            {
+                Console.Write("Please enter only integers");
+            }
+            
+            
+          
+        }
+    }
+}

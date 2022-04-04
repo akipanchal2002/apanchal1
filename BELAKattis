@@ -1,0 +1,51 @@
+using System;
+public class belaKattisProblem
+{ //1
+    public static void Main(string[] args) 
+    { //2
+        string line = Console.ReadLine();
+        
+        int space = line.IndexOf(' ');
+        
+        int hand = int.Parse(line.Substring (0, space)) * 4;
+        //this is a string within a string
+        
+        char suitype = line[space + 1];
+        // used for "character" 1 letter
+        int pointVal = 0;
+        
+        for (int aki = 0; aki < hand; aki++)
+        { //open for
+            string s = Console.ReadLine();
+            //switch statement
+            switch (s[0]) 
+            { //open switch
+                case 'A': //ace
+                    pointVal += 11;
+                break;
+                case 'K': //king
+                    pointVal += 4;
+                  break;
+                case 'Q': //queen
+                    pointVal += 3;
+                break;
+                case 'J': //jack
+                    if (s[1] == suitype)
+                        pointVal += 20;
+                    else
+                        pointVal += 2;
+                break;
+                case 'T': //ten
+                    pointVal += 10;
+                       break;
+                case '9':
+                    if (s[1] == suitype)
+                        pointVal += 14;
+                break;
+                default:
+                break;
+            } //close switch
+        } // close for 
+     Console.WriteLine(pointVal);
+    }// 2
+} //1
